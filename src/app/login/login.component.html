@@ -12,6 +12,6 @@
       <mat-error *ngIf="formLogin.get('password')?.errors?.minlength && !formLogin.get('password')?.errors?.required">La contraseña debe ser mayor a dos caracteres</mat-error>
       <mat-error *ngIf="formLogin.get('password')?.errors?.required">Contraseña requerida</mat-error>
     </mat-form-field>
-    <button mat-raised-button color="primary" (click)="login()" [disabled]="formLogin.invalid">Primary</button>
+    <button mat-raised-button color="primary" (click)="login()" [disabled]="formLogin.invalid">Iniciar sesión</button>
   </div>
 </div>

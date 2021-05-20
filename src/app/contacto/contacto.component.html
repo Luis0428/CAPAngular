@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="contacto-form" [formGroup]="formContacto">
+    <mat-form-field>
+      <mat-label>Contacto</mat-label>
+      <input matInput type="text" placeholder="Nombre de contacto" formControlName="contactname">
+      <mat-error *ngIf="formContacto.get('contactname')?.errors?.required">Nombre requerido</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput type="text" placeholder="Email de contacto" formControlName="contactemail">
+      <mat-error *ngIf="formContacto.get('contactemail')?.errors?.email && !formContacto.get('contactemail')?.errors?.required">Ingresa un email valido</mat-error>
+      <mat-error *ngIf="formContacto.get('contactemail')?.errors?.required">Email requerido</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Mensaje</mat-label>
+      <textarea matInput placeholder="Introduzca su mensaje" formControlName="contactmessage"></textarea>
+      <mat-error *ngIf="formContacto.get('contactmessage')?.errors?.required">Mensaje requerido</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="Enviar()" [disabled]="formContacto.invalid">Enviar</button>
+  </div>
+</div>
