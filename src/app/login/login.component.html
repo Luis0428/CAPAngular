@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="login-form" [formGroup]="formLogin">
+    <mat-form-field>
+      <mat-label>Usuario</mat-label>
+      <input matInput type="text" placeholder="Nombre de usuario" formControlName="username">
+      <mat-error *ngIf="formLogin.get('username')?.errors?.email && !formLogin.get('username')?.errors?.required">Ingresa un email valido</mat-error>
+      <mat-error *ngIf="formLogin.get('username')?.errors?.required">Email requerido</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Contraseña</mat-label>
+      <input matInput type="password" placeholder="Introduce Contraseña" formControlName="password">
+      <mat-error *ngIf="formLogin.get('password')?.errors?.minlength && !formLogin.get('password')?.errors?.required">La contraseña debe ser mayor a dos caracteres</mat-error>
+      <mat-error *ngIf="formLogin.get('password')?.errors?.required">Contraseña requerida</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="login()" [disabled]="formLogin.invalid">Primary</button>
+  </div>
+</div>
