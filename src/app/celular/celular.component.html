@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="celular-form" [formGroup]="formCelular">
+    <h1>{{title}}</h1>
+    <mat-form-field>
+      <mat-label>Marca</mat-label>
+      <input matInput type="text" placeholder="Nombre de la marca" formControlName="celularMarca">
+      <mat-error *ngIf="formCelular.get('celularMarca')?.errors?.required">Marca requerida</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Color</mat-label>
+      <input matInput type="text" placeholder="Color de celular" formControlName="celularColor">
+      <mat-error *ngIf="formCelular.get('celularColor')?.errors?.required">Color requerido</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Material</mat-label>
+      <textarea matInput placeholder="Material del celular" formControlName="celularMaterial"></textarea>
+      <mat-error *ngIf="formCelular.get('celularMaterial')?.errors?.required">Material requerido</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="save()" [disabled]="formCelular.invalid || disableButton">Guardar</button>
+  </div>
+</div>

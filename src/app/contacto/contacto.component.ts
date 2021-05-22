@@ -33,7 +33,5 @@ export class ContactoComponent implements OnInit {
       mensaje: mensaje
     } as EnvioRequest
 
-    console.log(data);
-
   }
 }
