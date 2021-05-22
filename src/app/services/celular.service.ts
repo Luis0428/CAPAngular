@@ -26,4 +26,8 @@ export class CelularService {
     return this.http.post("https://super-rest.herokuapp.com/test/celulares",item);
 
   }
+
+  deleteCelular(id: string): Observable<any>{
+    return this.http.delete("https://super-rest.herokuapp.com/test/celulares/"+ id)
+  }
 }

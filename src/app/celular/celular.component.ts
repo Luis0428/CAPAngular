@@ -18,7 +18,7 @@ export class CelularComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,private celularService: CelularService, private dataService: DataService, private router: Router, private activatedRoute: ActivatedRoute) {
     this.formCelular = this.formBuilder.group({
-      celularMarca: ['',[Validators.required, Validators.minLength(3)]],
+      celularMarca: ['',[Validators.required, Validators.minLength(2)]],
       celularColor: ['',[Validators.required, Validators.minLength(3)]],
       celularMaterial: ['',[Validators.required]]
     });
